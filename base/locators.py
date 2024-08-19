@@ -29,7 +29,7 @@ class MainPageLocators:
         By.XPATH, ".//button[contains(@class, 'Modal_modal__close')]")  # крестик закрытия модального окна
     CONSTRUCTOR_BASKET = (
         By.XPATH, ".//section[contains(@class, 'BurgerConstructor_basket')]")  # Конструктор бургера
-    COUNTER = (By.XPATH, ".//ul[1]/a[2]//p[contains(@class, 'num')]")  # Счетчик второго ингредиента
+    COUNTER = (By.XPATH, ".//ul[1]/a[1]//p[contains(@class, 'num')]")  # Счетчик второго ингредиента
     CREATE_ORDER = (By.XPATH, ".//button[contains(text(), 'Оформить заказ')]")  # Кнопка "Оформить заказ"
 
 
@@ -54,7 +54,7 @@ class PersonalAccountLocators:
 
 class OrderFeedLocators:
     ORDER_FEED_HEADER = (By.XPATH, '//h1[text()="Лента заказов"]')  # Заголовок "Лента заказов"
-    THIRD_ORDER = (By.XPATH, ".//ul[@class='OrderFeed_list__OLh59']/li[2]")
+    THIRD_ORDER = (By.XPATH, ".//ul[contains(@class, 'OrderFeed_list')]/li[2]")
     MODAL_ORDER_WINDOW = (By.XPATH, ".//div[contains(@class, 'Modal_orderBox')]")
     # История заказов в лк пользователя
     USER_ORDERS_HISTORY = (
@@ -62,7 +62,7 @@ class OrderFeedLocators:
 
     ORDER_NUMBERS = (By.XPATH, '//p[@class="text text_type_digits-default"]')  # Номера всех заказов в ленте
     LAST_ORDER = (By.XPATH, '//li[1]//p[@class="text text_type_digits-default"]')  # Номер последнего заказа в ленте
-    ORDER_IN_PROGRESS = (By.CSS_SELECTOR, 'ul.OrderFeed_orderListReady__1YFem li')  # Номер в разделе "В работе"
+    ORDER_IN_PROGRESS = (By.XPATH, "//*[contains(@class, 'OrderFeed_orderListReady')]/li[1]")  # Номер в разделе "В работе"
     # Счётчик "Выполнено за всё время"
     ALL_TIME_COUNTER = (By.XPATH, '//p[text()="Выполнено за все время:"]/../p[contains(@class,"OrderFeed_number")]')
     # Счётчик "Выполнено за сегодня"

@@ -11,7 +11,6 @@ from pages.main_page import MainPage
 from pages.personal_account_page import PersonalAccountPage
 
 
-# @pytest.fixture(params=['chrome', 'firefox'])
 @pytest.fixture(params=['chrome', 'firefox'], scope='function')
 def driver(request):
     if request.param == 'chrome':
